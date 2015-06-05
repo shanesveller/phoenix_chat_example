@@ -1,0 +1,14 @@
+web:
+  build: .
+  environment:
+    DATABASE_URL: ecto://chat:chat@db/chat_prod
+    PORT: 4001
+  links:
+    - db
+  ports:
+    - 4001:4001
+db:
+  image: postgres:9.4
+  environment:
+    POSTGRES_USER: chat
+    POSTGRES_PASSWORD: chat
