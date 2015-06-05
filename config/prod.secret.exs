@@ -9,6 +9,4 @@ config :chat, Chat.Endpoint,
 # Configure your database
 config :chat, Chat.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "chat_prod"
+  url: {:system, "DATABASE_URL"}
