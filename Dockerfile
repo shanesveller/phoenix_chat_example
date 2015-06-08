@@ -2,7 +2,7 @@ FROM shanesveller/phoenix-framework:latest
 
 COPY . /usr/src/app
 RUN node_modules/brunch/bin/brunch build --production
-RUN mix do compile, compile.protocols
+RUN mix compile
 
 ENV PORT 4001
 EXPOSE 4001
