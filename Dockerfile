@@ -1,14 +1,4 @@
-FROM shanesveller/phoenix:latest
-
-WORKDIR /usr/src/app
-
-COPY *.js* /usr/src/app/
-RUN npm install
-
-ENV MIX_ENV prod
-COPY mix.* /usr/src/app/
-COPY config /usr/src/app/
-RUN mix do deps.get, deps.compile
+FROM shanesveller/phoenix-framework:latest
 
 COPY . /usr/src/app
 RUN node_modules/brunch/bin/brunch build --production
